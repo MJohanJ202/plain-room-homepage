@@ -1,0 +1,46 @@
+.slider {
+  position: relative;
+
+  & img {
+    display: block;
+  }
+
+  & .slider__buttons {
+    position: absolute;
+    background: hsl(0, 0%, 0%);
+    right: 0;
+    bottom: 0;
+  }
+
+  & .slider__btn {
+    background-color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(11vh, 4.8rem);
+    min-height: min(9vh, 4.8rem);
+    transition: background-color .4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+    &:hover {
+      opacity: .9;
+      background-color: hsl(0deg 0% 26.67%);
+    }
+  }
+}
+
+
+@media screen and (min-width: 760px) {
+  .slider {
+    grid-column: 1 / 6;
+    grid-row: 1 / 1;
+
+    .slider__btn {
+      min-height: 7rem;
+      min-width: 7rem;
+    }
+
+    .slider__buttons {
+      right: 1.7rem;
+    }
+  }
+}

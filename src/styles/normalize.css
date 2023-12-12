@@ -377,3 +377,19 @@ template {
 [hidden] {
   display: none;
 }
+
+/** ++++++++---------**************** */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
