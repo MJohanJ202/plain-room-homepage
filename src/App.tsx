@@ -35,14 +35,16 @@ interface articleRoom {
 function ArticleRoom(props: articleRoom) {
   const { title, content, classes, children, classMain, idLink } = props
   return (
-    <article id={idLink} className={`article ${classMain} ${classes}`}>
-      <header className={`${classMain}__header`}>
-        <h2>{title}</h2>
-      </header>
-      <div className={`${classMain}__content`}>
-        <p>{content}</p>
+    <article id={idLink} className={`article ${classMain} ${classes ?? ''}`}>
+      <div className='wrapper'>
+        <header className={`${classMain}__header`}>
+          <h2>{title}</h2>
+        </header>
+        <div className={`${classMain}__content`}>
+          <p>{content}</p>
+        </div>
+        {children}
       </div>
-      {children}
     </article>
   )
 }
@@ -88,14 +90,14 @@ function App () {
     setIsToggle(!isToggle)
   }
 
-  const handleClickLink = () => setIsToggle(!isToggle)
+  const handleClickLink = () => setIsToggle(false)
 
   const handleSliderClick = (event: MouseEvent<HTMLElement>) => {
     console.log(event)
   }
 
   return (
-    <main className='main'>
+    <main className='main grid'>
       <header id='home' className={`grid header ${isToggle ? 'header--show' : ''}`}>
         <div className='wrapper-menu-btn'>
           <ButtonLink
@@ -117,6 +119,7 @@ function App () {
                   linkUrl={`#${link.toLowerCase()}`}
                   txtContent={link}
                   handleClick={handleClickLink}
+                  classes='flex menu__link'
                 />
               </li>
             ))}
@@ -130,6 +133,7 @@ function App () {
           urlDefault='/assets/images/mobile-hero-1.jpg'
           mediaQuery='min-width: 375px'
           descriptionHero='hero image'
+          classSection='view'
         />
         <div className='slider__buttons'>
           <ButtonLink
@@ -154,6 +158,7 @@ function App () {
         title={articles?.shop?.title}
         content={articles?.shop?.content}
         classMain='article--shop'
+        classes='flex'
         idLink='shop'
       >
         <footer>
@@ -168,7 +173,7 @@ function App () {
       </ArticleRoom>
       <HeroPicture
         urlDefault='/assets/images/about-dark.jpg'
-        urlDesktop='/assets/images/about-dark.jpg'
+        urlDesktop='/assets/images/desktop-about-dark.jpg'
         mediaQuery='min-width: 375px'
         descriptionHero='Hero about dark'
         classSection='about-dark'
@@ -176,14 +181,15 @@ function App () {
       <ArticleRoom
         title={articles?.about?.title}
         content={articles?.about?.content}
+        classes='flex'
         classMain='article--about'
         idLink='about'
       />
       <HeroPicture
         urlDefault='/assets/images/about-light.jpg'
-        urlDesktop='/assets/images/about-light.jpg'
-        descriptionHero='min-width: 375px'
-        mediaQuery='Hero about light'
+        urlDesktop='/assets/images/desktop-about-light.jpg'
+        mediaQuery='min-width: 375px'
+        descriptionHero='Hero about light'
         classSection='about-light'
       />
     </main>

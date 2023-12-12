@@ -1,10 +1,6 @@
 .slider {
   position: relative;
 
-  & img {
-    display: block;
-  }
-
   & .slider__buttons {
     position: absolute;
     background: hsl(0, 0%, 0%);
@@ -28,19 +24,44 @@
   }
 }
 
-
 @media screen and (min-width: 760px) {
   .slider {
-    grid-column: 1 / 6;
     grid-row: 1 / 1;
+    grid-column: 1 / -1;
 
-    .slider__btn {
-      min-height: 7rem;
+    & .slider__btn {
       min-width: 7rem;
+      min-height: 7rem;
     }
+  }
 
-    .slider__buttons {
-      right: 1.7rem;
+  .view {
+    & img {
+      min-width: 100vw;
+      max-height: 40rem;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .slider {
+    grid-column: 1 / 5;
+    max-width: 84rem;
+    min-height: 61vh;
+    min-width: 80%;
+    height: fit-content;
+  }
+
+  .view {
+    & img {
+      max-height: inherit;
+      min-width: initial;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .slider {
+    grid-column: 1 / 6;
   }
 }

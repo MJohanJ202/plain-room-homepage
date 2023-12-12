@@ -1,6 +1,11 @@
 .article {
+  justify-content: center;
+  padding: 4rem 8%;
   background-color: hsl(0, 0%, 100%);
-  padding: 4rem min(2.7rem, 8.6%);
+
+  .wrapper {
+    max-width: 26rem;
+  }
 
   & h2 {
     margin-top: 0;
@@ -41,6 +46,7 @@
 
     &:hover {
       letter-spacing: .8rem;
+      font-weight: 500;
       transform: scale(1.1) translateX(1rem);
       filter: contrast(0.8) drop-shadow(0.1rem 0.2rem 0.3rem rgba(0, 0, 0, .2));
     }
@@ -66,9 +72,25 @@
 
 @media screen and (min-width: 760px) {
   .article--shop {
+    grid-column: 1 / 5;
+  }
+
+  .article--about {
+    grid-row: 3;
+    grid-column: 1 / 5;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .article--shop {
     grid-column: 5 / 8;
     grid-row: 1 / 1;
-    padding: 8.6rem;
+    padding: 0;
+
+    .wrapper {
+      max-width: 34rem;
+      margin-left: min(4rem, 8%);
+    }
 
     & h2 {
       font-size: 3.5rem;
@@ -82,7 +104,11 @@
   .article--about {
     grid-row: 2;
     grid-column: 3 / 6;
-    padding: 5.1rem 5.1rem 5.1rem;
+    padding: 3rem;
+
+    .wrapper {
+      max-width: 41rem;
+    }
 
     & h2 {
       font-size: 1.44rem;
