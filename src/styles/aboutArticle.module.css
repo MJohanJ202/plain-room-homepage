@@ -1,0 +1,35 @@
+.articleAbout {
+  & h2 {
+    letter-spacing: .45rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  & p {
+    word-spacing: .12rem;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 760px) {
+    grid-row: 3;
+    grid-column: 1 / 5;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-row: 2;
+    grid-column: 3 / 6;
+    padding: 3rem 3rem 1rem;
+
+    & h2 {
+      font-size: 1.44rem;
+      letter-spacing: .5rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.articleAboutWrapper {
+  @media screen and (min-width: 1024px) {
+    max-width: 41rem;
+  }
+}

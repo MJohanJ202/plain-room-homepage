@@ -1,0 +1,19 @@
+.menuBtn {
+  width: 1.5rem;
+  height: 1rem;
+  display: inline-block;
+  transition: background .3s cubic-bezier(0.55, 0.055, 0.675, 0.19) .2s;
+
+  & img {
+    opacity: 1;
+    transition: opacity .5s cubic-bezier(0, 0.96, 0.41, 0.6) .3s;
+  }
+}
+
+.menuBtnClose {
+  background: url('/assets/icons/close.svg') no-repeat center/100%;
+
+  & img {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,20 @@
+.article {
+  background-color: hsl(0, 0%, 100%);
+  justify-content: center;
+  padding: 4rem 8%;
+
+  & h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & p {
+    font-size: 1.23rem;
+    color: var(--Dark-Gray);
+    line-height: 1.8rem;
+  }
+}
+
+.wrapperDefault {
+    max-width: 26rem;
+}

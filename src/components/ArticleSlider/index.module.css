@@ -1,0 +1,88 @@
+@import url('./buttons.module.css');
+
+.slider {
+  position: relative;
+
+  @media screen and (min-width: 760px) {
+    grid-row: 1 / 1;
+    grid-column: 1 / -1;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-column: 1 / 5;
+    max-width: 84rem;
+    min-height: 61vh;
+    min-width: 80%;
+    height: fit-content;
+  }
+
+  @media screen and (min-width: 1440px) {
+    grid-column: 1 / 6;
+  }
+}
+
+.sliderView {
+  @media screen and (min-width: 760px) {
+    & img {
+      min-width: 100vw;
+      max-height: 40rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    & img {
+      max-height: inherit;
+      min-width: initial;
+    }
+  }
+}
+
+.sliderButtons {
+  position: absolute;
+  background: hsl(0, 0%, 0%);
+  right: 0;
+  bottom: 0;
+}
+
+.articleShop {
+  & h2 {
+    font-size: 2.8rem;
+  }
+
+  & .article__content {
+    margin-bottom: 3.5rem;
+  }
+
+  & p {
+    white-space: pre-line;
+    word-spacing: 0.1rem;
+  }
+
+  @media screen and (min-width: 760px) {
+    grid-column: 1 / 5;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-column: 5 / 8;
+    grid-row: 1 / 1;
+    padding: 3rem;
+
+    & h2 {
+      font-size: 3.5rem;
+    }
+
+    & .article__content {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.articleShopWrapper {
+  @media screen and (min-width: 1024px) {
+    max-width: 33.7rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 4rem;
+  }
+}

@@ -1,0 +1,29 @@
+@import url('./menuLinks.module.css');
+
+.nav {
+  grid-column: 2 /2;
+  grid-row: 1/1;
+
+  @media screen and (min-width: 760px) {
+    grid-column: 2 /2;
+    grid-row: 1/1;
+  }
+}
+
+.menu {
+  transform: scale(0);
+  transition: transform .5s cubic-bezier(0.5, -0.09, 0.38, 1.01);
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media screen and (min-width: 760px) {
+    transform: scale(1);
+    grid-auto-columns: min-content;
+    gap: .5rem;
+
+    & li:not(:last-child) {
+      justify-self: flex-start;
+    }
+  }
+}

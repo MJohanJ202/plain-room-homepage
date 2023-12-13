@@ -1,0 +1,82 @@
+@import url('buttons.module.css');
+
+.header {
+  --index: 200;
+
+  box-sizing: border-box;
+  padding: 3.8rem 2rem;
+  grid-template-columns: 1fr 2fr;
+  background-color: transparent;
+  transition: background-color .4s cubic-bezier(0, -0.32, 0.59, 1.19);
+  gap: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--index);
+
+  @media screen and (min-width: 760px) {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    height: fit-content;
+    position: initial;
+    padding: 5rem 5rem;
+    width: fit-content;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-column: 1 / 5;
+  }
+}
+
+.logo {
+  grid-column: 2/2;
+  grid-row: 1/1;
+
+  @media screen and (min-width: 760px) {
+    grid-column: 1 / 1;
+  }
+}
+
+.wrapperMenuBtn {
+  @media screen and (min-width: 760px) {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+.shadowing {
+  --index: 0;
+
+  pointer-events: none;
+  background-color: hsl(0, 0%, 0%);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity .6s cubic-bezier(0.87, 0, 0.13, 1) .1s;
+  height: 100vh;
+  width: 100%;
+  z-index: var(--index);
+
+  @media screen and (min-width: 760px) {
+    display: none;
+  }
+
+}
+
+.headerShow {
+  background-color: hsl(0, 0%, 100%);
+
+  & nav>ul {
+    transform: scale(1);
+    gap: 2.2rem;
+  }
+
+  &+.shadowing {
+    --index: 100;
+    opacity: .6;
+  }
+}
